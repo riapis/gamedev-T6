@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://dn2wk2l0los1j"]
+
+[ext_resource type="FontFile" uid="uid://g0e4g4332ft0" path="res://assets/Fonts/Raw/CC Wild Words Roman.ttf" id="1_6gt7n"]
+[ext_resource type="Script" path="res://scripts/Lives.gd" id="1_yospo"]
+
+[node name="GUI" type="MarginContainer"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_6gt7n")
+theme_override_font_sizes/font_size = 40
+script = ExtResource("1_yospo")

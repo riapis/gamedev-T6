@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://c2xfnv5r1cyvf"]
+[gd_scene load_steps=5 format=3 uid="uid://c2xfnv5r1cyvf"]
 
 [ext_resource type="FontFile" uid="uid://g0e4g4332ft0" path="res://assets/Fonts/Raw/CC Wild Words Roman.ttf" id="1_jn7ku"]
 [ext_resource type="FontFile" uid="uid://cth60gqdxo73p" path="res://assets/Fonts/Raw/continuum bold.ttf" id="2_i3lcq"]
-[ext_resource type="Texture2D" uid="uid://26wqrar1o8aw" path="res://icon.png" id="3_r3mlb"]
+[ext_resource type="Script" path="res://scripts/StartGame.gd" id="3_ac6nf"]
+[ext_resource type="Texture2D" uid="uid://dwc8dd51xoi1h" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_alien.png" id="4_mott5"]
 
 [node name="MarginContainer" type="MarginContainer"]
 anchors_preset = 15
@@ -22,34 +23,42 @@ alignment = 1
 
 [node name="Label" type="Label" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
-theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_color = Color(0.884099, 0.884099, 0.884099, 1)
 theme_override_fonts/font = ExtResource("1_jn7ku")
 theme_override_font_sizes/font_size = 100
-text = "JUDUL"
+text = "ALIEN
+ALIEN"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_constants/separation = 10
 
-[node name="LinkButton" type="LinkButton" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+[node name="StartGame" type="LinkButton" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0.729412, 0, 1)
 theme_override_colors/font_hover_color = Color(0.192472, 0.603573, 0.576459, 1)
 theme_override_fonts/font = ExtResource("2_i3lcq")
-theme_override_font_sizes/font_size = 24
-text = "New Button"
+theme_override_font_sizes/font_size = 36
+action_mode = 0
+text = "Start Game"
+underline = 1
+script = ExtResource("3_ac6nf")
+scene_to_load = "Level 1"
 
-[node name="LinkButton2" type="LinkButton" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
+[node name="SelectStage" type="LinkButton" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0.729412, 0, 1)
 theme_override_colors/font_hover_color = Color(0.192472, 0.603573, 0.576459, 1)
 theme_override_fonts/font = ExtResource("2_i3lcq")
-theme_override_font_sizes/font_size = 24
-text = "Stage Select"
+theme_override_font_sizes/font_size = 36
+text = "Select Stage"
+underline = 1
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
 custom_minimum_size = Vector2(200, 200)
 layout_mode = 2
 size_flags_horizontal = 4
-texture = ExtResource("3_r3mlb")
+texture = ExtResource("4_mott5")
 stretch_mode = 5
+
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/StartGame" to="HBoxContainer/VBoxContainer/VBoxContainer/StartGame" method="_on_pressed"]
