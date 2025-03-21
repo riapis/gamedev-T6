@@ -1,0 +1,69 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpi1wjd1m37a4"]
+
+[ext_resource type="FontFile" uid="uid://cth60gqdxo73p" path="res://assets/Fonts/Raw/continuum bold.ttf" id="1_ohu51"]
+[ext_resource type="Script" path="res://scripts/ChangeScenes.gd" id="2_oyubx"]
+
+[node name="Stage" type="MarginContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 2
+color = Color(0, 0.508417, 0, 1)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Level 1" type="LinkButton" parent="ColorRect/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_hover_color = Color(0.581943, 0.876998, 0.639856, 1)
+theme_override_fonts/font = ExtResource("1_ohu51")
+theme_override_font_sizes/font_size = 40
+text = "Level 1"
+underline = 1
+script = ExtResource("2_oyubx")
+scene_to_load = "Level 1"
+
+[node name="Level 2" type="LinkButton" parent="ColorRect/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_hover_color = Color(0.465797, 0.879824, 0.833157, 1)
+theme_override_fonts/font = ExtResource("1_ohu51")
+theme_override_font_sizes/font_size = 40
+text = "Level 2"
+underline = 1
+script = ExtResource("2_oyubx")
+scene_to_load = "Level 2"
+
+[node name="Return" type="LinkButton" parent="ColorRect/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_colors/font_hover_color = Color(0.465797, 0.879824, 0.833157, 1)
+theme_override_fonts/font = ExtResource("1_ohu51")
+theme_override_font_sizes/font_size = 40
+text = "Return"
+script = ExtResource("2_oyubx")
+scene_to_load = "mainmenu"
+
+[connection signal="pressed" from="ColorRect/VBoxContainer/HBoxContainer/Level 1" to="ColorRect/VBoxContainer/HBoxContainer/Level 1" method="_on_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/HBoxContainer/Level 2" to="ColorRect/VBoxContainer/HBoxContainer/Level 2" method="_on_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/Return" to="ColorRect/VBoxContainer/Return" method="_on_pressed"]

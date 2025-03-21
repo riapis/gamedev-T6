@@ -2,7 +2,7 @@
 
 [ext_resource type="FontFile" uid="uid://g0e4g4332ft0" path="res://assets/Fonts/Raw/CC Wild Words Roman.ttf" id="1_jn7ku"]
 [ext_resource type="FontFile" uid="uid://cth60gqdxo73p" path="res://assets/Fonts/Raw/continuum bold.ttf" id="2_i3lcq"]
-[ext_resource type="Script" path="res://scripts/StartGame.gd" id="3_ac6nf"]
+[ext_resource type="Script" path="res://scripts/ChangeScenes.gd" id="3_qe21f"]
 [ext_resource type="Texture2D" uid="uid://dwc8dd51xoi1h" path="res://assets/kenney_platformerpack/Spritesheets/spritesheet_alien.png" id="4_mott5"]
 
 [node name="MarginContainer" type="MarginContainer"]
@@ -42,7 +42,7 @@ theme_override_font_sizes/font_size = 36
 action_mode = 0
 text = "Start Game"
 underline = 1
-script = ExtResource("3_ac6nf")
+script = ExtResource("3_qe21f")
 scene_to_load = "Level 1"
 
 [node name="SelectStage" type="LinkButton" parent="HBoxContainer/VBoxContainer/VBoxContainer"]
@@ -53,6 +53,8 @@ theme_override_fonts/font = ExtResource("2_i3lcq")
 theme_override_font_sizes/font_size = 36
 text = "Select Stage"
 underline = 1
+script = ExtResource("3_qe21f")
+scene_to_load = "Stage"
 
 [node name="TextureRect" type="TextureRect" parent="HBoxContainer"]
 custom_minimum_size = Vector2(200, 200)
@@ -62,3 +64,4 @@ texture = ExtResource("4_mott5")
 stretch_mode = 5
 
 [connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/StartGame" to="HBoxContainer/VBoxContainer/VBoxContainer/StartGame" method="_on_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/VBoxContainer/SelectStage" to="HBoxContainer/VBoxContainer/VBoxContainer/SelectStage" method="_on_pressed"]

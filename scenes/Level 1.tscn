@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=4 uid="uid://damkuqx1xbloy"]
+[gd_scene load_steps=7 format=4 uid="uid://damkuqx1xbloy"]
 
-[ext_resource type="PackedScene" path="res://scenes/Player.tscn" id="1"]
+[ext_resource type="PackedScene" uid="uid://85605mnuho4r" path="res://scenes/Player.tscn" id="1"]
 [ext_resource type="PackedScene" uid="uid://bls6pqt8flug3" path="res://scenes/tile_map.tscn" id="2_ixamt"]
 [ext_resource type="Texture2D" uid="uid://tpq0ge2lruix" path="res://assets/Familiar Looking Rocket.png" id="3"]
 [ext_resource type="PackedScene" uid="uid://bul5fybv2rytg" path="res://scenes/Area Trigger.tscn" id="4_enfm1"]
 [ext_resource type="PackedScene" uid="uid://dn2wk2l0los1j" path="res://scenes/LiveCounter.tscn" id="5_icvnc"]
+[ext_resource type="PackedScene" uid="uid://v1w620ah6fbc" path="res://scenes/PauseMenu.tscn" id="6_rsvey"]
 
 [node name="Level 1" type="Node2D"]
 
@@ -30,3 +31,5 @@ sceneName = "Level 2"
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
 [node name="MarginContainer" parent="CanvasLayer" instance=ExtResource("5_icvnc")]
+
+[node name="PauseMenu" parent="CanvasLayer" instance=ExtResource("6_rsvey")]
